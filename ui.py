@@ -13,134 +13,287 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
+
+
+        '''
+        IncludeLeetCheck -
+            CheckBox for including Leet combinations
+        IncludeWLCheck -
+            CheckBox for including a word list
+        CustomWordsText -
+            A text box for making combinations of a custom word
+        AddPrefixText -
+            A text box for adding a prefix before the combinations
+        AddSuffixText -
+            A text box for adding a suffix after the combinations
+        IncludeCombosCheck -
+            A check box for giving the option to add combinations of prefix
+        IncludeNumsPreCheck -
+            A check box for including numbers as prefix
+        IncludeNumsSufCheck -
+            A check box for including numbers as suffix
+        PrefixNumLenCheck -
+            A spin box for setting the length of numbers as the prefix
+        SuffixNumLenCheck -
+            A spin box for setting the length of numbers as the suffix
+        IncludeNumsCheck -
+            A check box for including numbers in the wordlist
+        DefaultListCheck -
+            A check box for using the default character list (abcdefghizjklmonpqrstuvqxyz)
+        MinComboLenCheck -
+            A spin box for setting the minimum length of combinations
+        MaxComboLenCheck -
+            A spin box for setting the maximum length of combinations
+        CustomListText -
+            A text box for making a custom character list
+        ExtendDefaultListText -
+            A text box for extending the default character list
+        Generate -
+            A button to make the combinations
+        '''
+
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(467, 417)
+        MainWindow.resize(543, 905)
         MainWindow.setAutoFillBackground(True)
+
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        self.LeetCombo = QtWidgets.QLabel(self.centralwidget)
-        self.LeetCombo.setGeometry(QtCore.QRect(50, 30, 151, 31))
-        self.LeetCombo.setAutoFillBackground(True)
-        self.LeetCombo.setObjectName("LeetCombo")
-        self.WordList = QtWidgets.QLabel(self.centralwidget)
-        self.WordList.setGeometry(QtCore.QRect(50, 70, 101, 16))
-        self.WordList.setAutoFillBackground(True)
-        self.WordList.setObjectName("WordList")
-        self.LeetCheck = QtWidgets.QCheckBox(self.centralwidget)
-        self.LeetCheck.setGeometry(QtCore.QRect(20, 40, 16, 17))
-        self.LeetCheck.setText("")
-        self.LeetCheck.setObjectName("LeetCheck")
-        self.WLcheck = QtWidgets.QCheckBox(self.centralwidget)
-        self.WLcheck.setGeometry(QtCore.QRect(20, 70, 16, 17))
-        self.WLcheck.setText("")
-        self.WLcheck.setChecked(False)
-        self.WLcheck.setObjectName("WLcheck")
-        self.Settings = QtWidgets.QLabel(self.centralwidget)
-        self.Settings.setGeometry(QtCore.QRect(10, 100, 181, 41))
+
+        #Setting for CustomListText
+        self.CustomListText = QtWidgets.QTextEdit(self.centralwidget)
+        self.CustomListText.setGeometry(QtCore.QRect(40, 680, 101, 31))
+        self.CustomListText.setObjectName("CustomListText")
+
+
+        #Setting for Generate
+        self.Generate = QtWidgets.QPushButton(self.centralwidget)
+        self.Generate.setGeometry(QtCore.QRect(190, 800, 141, 41))
+        self.Generate.setObjectName("Generate")
+
+
+        #Setting for IncludeWLCheck
+        self.IncludeWLCheck = QtWidgets.QCheckBox(self.centralwidget)
+        self.IncludeWLCheck.setGeometry(QtCore.QRect(40, 110, 16, 17))
+        self.IncludeWLCheck.setText("")
+        self.IncludeWLCheck.setChecked(False)
+        self.IncludeWLCheck.setObjectName("IncludeWLCheck")
+
+
+        #Setting for DefaultListLabel
+        self.DefaultListLabel = QtWidgets.QLabel(self.centralwidget)
+        self.DefaultListLabel.setGeometry(QtCore.QRect(70, 570, 161, 16))
+        self.DefaultListLabel.setObjectName("DefaultListLabel")
+        self.MaxComboLenLabel = QtWidgets.QLabel(self.centralwidget)
+        self.MaxComboLenLabel.setGeometry(QtCore.QRect(100, 640, 101, 20))
+        self.MaxComboLenLabel.setObjectName("MaxComboLenLabel")
+
+
+        #Setting for LeetCombinationsLabel
+        self.LeetCombinationsLabel = QtWidgets.QLabel(self.centralwidget)
+        self.LeetCombinationsLabel.setGeometry(QtCore.QRect(70, 80, 131, 21))
+        self.LeetCombinationsLabel.setAutoFillBackground(True)
+        self.LeetCombinationsLabel.setObjectName("LeetCombinationsLabel")
+
+
+        #Setting for WLSettingsLabel
+        self.WLSettingsLabel = QtWidgets.QLabel(self.centralwidget)
+        self.WLSettingsLabel.setGeometry(QtCore.QRect(30, 490, 181, 41))
         font = QtGui.QFont()
         font.setPointSize(12)
         font.setBold(True)
         font.setWeight(75)
-        self.Settings.setFont(font)
-        self.Settings.setObjectName("Settings")
-        self.Numbers = QtWidgets.QLabel(self.centralwidget)
-        self.Numbers.setGeometry(QtCore.QRect(50, 150, 91, 16))
-        self.Numbers.setObjectName("Numbers")
-        self.NumCheck = QtWidgets.QCheckBox(self.centralwidget)
-        self.NumCheck.setGeometry(QtCore.QRect(20, 150, 16, 17))
-        self.NumCheck.setText("")
-        self.NumCheck.setObjectName("NumCheck")
-        self.AlpaList = QtWidgets.QLabel(self.centralwidget)
-        self.AlpaList.setGeometry(QtCore.QRect(50, 180, 161, 16))
-        self.AlpaList.setObjectName("AlpaList")
-        self.DefList = QtWidgets.QCheckBox(self.centralwidget)
-        self.DefList.setGeometry(QtCore.QRect(20, 180, 16, 17))
-        self.DefList.setText("")
-        self.DefList.setObjectName("DefList")
-        self.MinLength = QtWidgets.QLabel(self.centralwidget)
-        self.MinLength.setGeometry(QtCore.QRect(80, 210, 91, 20))
-        self.MinLength.setObjectName("MinLength")
-        self.MinCombo = QtWidgets.QComboBox(self.centralwidget)
-        self.MinCombo.setGeometry(QtCore.QRect(20, 210, 41, 26))
-        self.MinCombo.setEditable(False)
-        self.MinCombo.setMaxVisibleItems(26)
-        self.MinCombo.setMinimumContentsLength(1)
-        self.MinCombo.setPlaceholderText("")
-        self.MinCombo.setObjectName("MinCombo")
-        self.MinCombo.addItem("")
-        self.MinCombo.addItem("")
-        self.MinCombo.addItem("")
-        self.MinCombo.addItem("")
-        self.MinCombo.addItem("")
-        self.MinCombo.addItem("")
-        self.MinCombo.addItem("")
-        self.MinCombo.addItem("")
-        self.MinCombo.addItem("")
-        self.MinCombo.addItem("")
-        self.MinCombo.addItem("")
-        self.MinCombo.addItem("")
-        self.MinCombo.addItem("")
-        self.MinCombo.addItem("")
-        self.MinCombo.addItem("")
-        self.MinCombo.addItem("")
-        self.MinCombo.addItem("")
-        self.MinCombo.addItem("")
-        self.MinCombo.addItem("")
-        self.MinCombo.addItem("")
-        self.MinCombo.addItem("")
-        self.MinCombo.addItem("")
-        self.MinCombo.addItem("")
-        self.MinCombo.addItem("")
-        self.MinCombo.addItem("")
-        self.MinCombo.addItem("")
-        self.MaxCombo = QtWidgets.QComboBox(self.centralwidget)
-        self.MaxCombo.setGeometry(QtCore.QRect(20, 250, 41, 26))
-        self.MaxCombo.setEditable(False)
-        self.MaxCombo.setMaxVisibleItems(26)
-        self.MaxCombo.setMinimumContentsLength(1)
-        self.MaxCombo.setPlaceholderText("")
-        self.MaxCombo.setObjectName("MaxCombo")
-        self.MaxCombo.addItem("")
-        self.MaxCombo.addItem("")
-        self.MaxCombo.addItem("")
-        self.MaxCombo.addItem("")
-        self.MaxCombo.addItem("")
-        self.MaxCombo.addItem("")
-        self.MaxCombo.addItem("")
-        self.MaxCombo.addItem("")
-        self.MaxCombo.addItem("")
-        self.MaxCombo.addItem("")
-        self.MaxCombo.addItem("")
-        self.MaxCombo.addItem("")
-        self.MaxCombo.addItem("")
-        self.MaxCombo.addItem("")
-        self.MaxCombo.addItem("")
-        self.MaxCombo.addItem("")
-        self.MaxCombo.addItem("")
-        self.MaxCombo.addItem("")
-        self.MaxCombo.addItem("")
-        self.MaxCombo.addItem("")
-        self.MaxCombo.addItem("")
-        self.MaxCombo.addItem("")
-        self.MaxCombo.addItem("")
-        self.MaxCombo.addItem("")
-        self.MaxCombo.addItem("")
-        self.MaxCombo.addItem("")
-        self.MaxLength = QtWidgets.QLabel(self.centralwidget)
-        self.MaxLength.setGeometry(QtCore.QRect(80, 250, 101, 20))
-        self.MaxLength.setObjectName("MaxLength")
-        self.CustomTextEdit = QtWidgets.QTextEdit(self.centralwidget)
-        self.CustomTextEdit.setGeometry(QtCore.QRect(20, 290, 101, 31))
-        self.CustomTextEdit.setObjectName("CustomTextEdit")
-        self.CustomCharList = QtWidgets.QLabel(self.centralwidget)
-        self.CustomCharList.setGeometry(QtCore.QRect(140, 295, 271, 21))
-        self.CustomCharList.setObjectName("CustomCharList")
-        self.Generate = QtWidgets.QPushButton(self.centralwidget)
-        self.Generate.setGeometry(QtCore.QRect(250, 330, 141, 41))
-        self.Generate.setObjectName("Generate")
+        self.WLSettingsLabel.setFont(font)
+        self.WLSettingsLabel.setObjectName("WLSettingsLabel")
+
+
+        #Setting for CustomListLabel
+        self.CustomListLabel = QtWidgets.QLabel(self.centralwidget)
+        self.CustomListLabel.setGeometry(QtCore.QRect(160, 685, 271, 21))
+        self.CustomListLabel.setObjectName("CustomListLabel")
+
+
+        #Setting for IncludeNumsCheck
+        self.IncludeNumsCheck = QtWidgets.QCheckBox(self.centralwidget)
+        self.IncludeNumsCheck.setGeometry(QtCore.QRect(40, 540, 16, 17))
+        self.IncludeNumsCheck.setText("")
+        self.IncludeNumsCheck.setObjectName("IncludeNumsCheck")
+
+
+        #Setting for GenWordListLabel
+        self.GenWordListLabel = QtWidgets.QLabel(self.centralwidget)
+        self.GenWordListLabel.setGeometry(QtCore.QRect(70, 110, 111, 16))
+        self.GenWordListLabel.setAutoFillBackground(True)
+        self.GenWordListLabel.setObjectName("GenWordListLabel")
+ 
+
+        #Setting for IncludeLeetCheck
+        self.IncludeLeetCheck = QtWidgets.QCheckBox(self.centralwidget)
+        self.IncludeLeetCheck.setGeometry(QtCore.QRect(40, 80, 16, 17))
+        self.IncludeLeetCheck.setText("")
+        self.IncludeLeetCheck.setObjectName("IncludeLeetCheck")
+
+
+        #Setting for IncludeNumsLabel
+        self.IncludeNumsLabel = QtWidgets.QLabel(self.centralwidget)
+        self.IncludeNumsLabel.setGeometry(QtCore.QRect(70, 540, 91, 16))
+        self.IncludeNumsLabel.setObjectName("IncludeNumsLabel")
+
+
+        #Setting for DefaultListCheck
+        self.DefaultListCheck = QtWidgets.QCheckBox(self.centralwidget)
+        self.DefaultListCheck.setGeometry(QtCore.QRect(40, 570, 16, 17))
+        self.DefaultListCheck.setText("")
+        self.DefaultListCheck.setObjectName("DefaultListCheck")
+
+ 
+        #Setting for MinComboLenlabel
+        self.MinComboLenLabel = QtWidgets.QLabel(self.centralwidget)
+        self.MinComboLenLabel.setGeometry(QtCore.QRect(100, 600, 91, 20))
+        self.MinComboLenLabel.setObjectName("MinComboLenLabel")
+
+
+        #Setting for GenralSettingsLabel
+        self.GenralSettingsLabel = QtWidgets.QLabel(self.centralwidget)
+        self.GenralSettingsLabel.setGeometry(QtCore.QRect(30, 30, 151, 31))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
+        self.GenralSettingsLabel.setFont(font)
+        self.GenralSettingsLabel.setObjectName("GenralSettingsLabel")
+
+
+        #Setting for ExtendDefaultListText
+        self.ExtendDefaultListText = QtWidgets.QTextEdit(self.centralwidget)
+        self.ExtendDefaultListText.setGeometry(QtCore.QRect(40, 720, 101, 31))
+        self.ExtendDefaultListText.setObjectName("ExtendDefaultListText")
+        self.ExtandDefaultListLabel = QtWidgets.QLabel(self.centralwidget)
+        self.ExtandDefaultListLabel.setGeometry(QtCore.QRect(160, 719, 161, 31))
+        self.ExtandDefaultListLabel.setObjectName("ExtandDefaultListLabel")
+
+
+        #Setting for PrefixSuffixSettingsLabel
+        self.PrefixSuffixSettingsLabel = QtWidgets.QLabel(self.centralwidget)
+        self.PrefixSuffixSettingsLabel.setGeometry(QtCore.QRect(30, 200, 211, 21))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
+        self.PrefixSuffixSettingsLabel.setFont(font)
+        self.PrefixSuffixSettingsLabel.setObjectName("PrefixSuffixSettingsLabel")
+
+
+        #Setting for CustomWordsText
+        self.CustomWordsText = QtWidgets.QTextEdit(self.centralwidget)
+        self.CustomWordsText.setGeometry(QtCore.QRect(40, 140, 104, 31))
+        self.CustomWordsText.setObjectName("CustomWordsText")
+        self.CustomWordsLabel = QtWidgets.QLabel(self.centralwidget)
+        self.CustomWordsLabel.setGeometry(QtCore.QRect(160, 140, 231, 31))
+        self.CustomWordsLabel.setObjectName("CustomWordsLabel")
+
+
+        #Setting for AddPrefixText
+        self.AddPrefixText = QtWidgets.QTextEdit(self.centralwidget)
+        self.AddPrefixText.setGeometry(QtCore.QRect(40, 230, 104, 31))
+        self.AddPrefixText.setObjectName("AddPrefixText")
+
+
+        #Setting for AddSuffixText
+        self.AddSuffixText = QtWidgets.QTextEdit(self.centralwidget)
+        self.AddSuffixText.setGeometry(QtCore.QRect(40, 280, 104, 31))
+        self.AddSuffixText.setObjectName("AddSuffixText")
+
+
+        #Setting for IncludeCombosCheck
+        self.IncludeCombosCheck = QtWidgets.QCheckBox(self.centralwidget)
+        self.IncludeCombosCheck.setGeometry(QtCore.QRect(40, 320, 16, 17))
+        self.IncludeCombosCheck.setText("")
+        self.IncludeCombosCheck.setChecked(False)
+        self.IncludeCombosCheck.setObjectName("IncludeCombosCheck")
+
+
+        #Setting for IncludeNumsPreCheck
+        self.IncludeNumsPreCheck = QtWidgets.QCheckBox(self.centralwidget)
+        self.IncludeNumsPreCheck.setGeometry(QtCore.QRect(40, 350, 16, 17))
+        self.IncludeNumsPreCheck.setText("")
+        self.IncludeNumsPreCheck.setChecked(False)
+        self.IncludeNumsPreCheck.setObjectName("IncludeNumsPreCheck")
+
+
+        #Setting for AddPrefixLabel
+        self.AddPrefixLabel = QtWidgets.QLabel(self.centralwidget)
+        self.AddPrefixLabel.setGeometry(QtCore.QRect(170, 240, 61, 21))
+        self.AddPrefixLabel.setObjectName("AddPrefixLabel")
+        self.AddSuffixLabel = QtWidgets.QLabel(self.centralwidget)
+        self.AddSuffixLabel.setGeometry(QtCore.QRect(170, 290, 71, 21))
+        self.AddSuffixLabel.setObjectName("AddSuffixLabel")
+
+
+        #Setting for IncludeCombosLabel
+        self.IncludeCombosLabel = QtWidgets.QLabel(self.centralwidget)
+        self.IncludeCombosLabel.setGeometry(QtCore.QRect(80, 320, 211, 16))
+        self.IncludeCombosLabel.setObjectName("IncludeCombosLabel")
+
+
+        #Setting for IncludeNumsPreLabel
+        self.IncludeNumsPreLabel = QtWidgets.QLabel(self.centralwidget)
+        self.IncludeNumsPreLabel.setGeometry(QtCore.QRect(80, 346, 131, 20))
+        self.IncludeNumsPreLabel.setObjectName("IncludeNumsPreLabel")
+
+
+        #Setting for IncludeNumsSufCheck
+        self.IncludeNumsSufCheck = QtWidgets.QCheckBox(self.centralwidget)
+        self.IncludeNumsSufCheck.setGeometry(QtCore.QRect(40, 380, 16, 17))
+        self.IncludeNumsSufCheck.setText("")
+        self.IncludeNumsSufCheck.setObjectName("IncludeNumsSufCheck")
+
+
+        #Setting for IncludeNumsSufLabel
+        self.IncludeNumsSufLabel = QtWidgets.QLabel(self.centralwidget)
+        self.IncludeNumsSufLabel.setGeometry(QtCore.QRect(80, 380, 131, 20))
+        self.IncludeNumsSufLabel.setObjectName("IncludeNumsSufLabel")
+
+
+        #Setting for SuffixNumLenLabel
+        self.SuffixNumLenLabel = QtWidgets.QLabel(self.centralwidget)
+        self.SuffixNumLenLabel.setGeometry(QtCore.QRect(100, 460, 111, 20))
+        self.SuffixNumLenLabel.setObjectName("SuffixNumLenLabel")
+
+
+        #Setting for PrefixNumLenLabel
+        self.PrefixNumLenLabel = QtWidgets.QLabel(self.centralwidget)
+        self.PrefixNumLenLabel.setGeometry(QtCore.QRect(100, 420, 111, 20))
+        self.PrefixNumLenLabel.setObjectName("PrefixNumLenLabel")
+
+
+        #Setting for MinComboLenCheck
+        self.MinComboLenCheck = QtWidgets.QSpinBox(self.centralwidget)
+        self.MinComboLenCheck.setGeometry(QtCore.QRect(40, 600, 42, 22))
+        self.MinComboLenCheck.setObjectName("MinComboLenCheck")
+
+
+        #Setting for MacComboLenCheck
+        self.MaxComboLenCheck = QtWidgets.QSpinBox(self.centralwidget)
+        self.MaxComboLenCheck.setGeometry(QtCore.QRect(40, 640, 42, 22))
+        self.MaxComboLenCheck.setObjectName("MaxComboLenCheck")
+
+
+        #Setting for PrefixNumLenCheck
+        self.PrefixNumLenCheck = QtWidgets.QSpinBox(self.centralwidget)
+        self.PrefixNumLenCheck.setGeometry(QtCore.QRect(40, 420, 42, 22))
+        self.PrefixNumLenCheck.setObjectName("PrefixNumLenCheck")
+
+
+        #Setting for SuffixNumLenCheck
+        self.SuffixNumLenCheck = QtWidgets.QSpinBox(self.centralwidget)
+        self.SuffixNumLenCheck.setGeometry(QtCore.QRect(40, 460, 42, 22))
+        self.SuffixNumLenCheck.setObjectName("SuffixNumLenCheck")
+
+
+
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 467, 21))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 543, 21))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
@@ -148,76 +301,33 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
-        self.MinCombo.setCurrentIndex(0)
-        self.MaxCombo.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.LeetCombo.setText(_translate("MainWindow", "Include Leet Combinatons"))
-        self.WordList.setText(_translate("MainWindow", "Generate a word list"))
-        self.Settings.setText(_translate("MainWindow", "Settings for word list"))
-        self.Numbers.setText(_translate("MainWindow", "Include Numbers"))
-        self.AlpaList.setText(_translate("MainWindow", "Use default alphabet list (abc...)"))
-        self.MinLength.setText(_translate("MainWindow", "Min. Combo length"))
-        self.MinCombo.setCurrentText(_translate("MainWindow", "1"))
-        self.MinCombo.setItemText(0, _translate("MainWindow", "1"))
-        self.MinCombo.setItemText(1, _translate("MainWindow", "2"))
-        self.MinCombo.setItemText(2, _translate("MainWindow", "3"))
-        self.MinCombo.setItemText(3, _translate("MainWindow", "4"))
-        self.MinCombo.setItemText(4, _translate("MainWindow", "5"))
-        self.MinCombo.setItemText(5, _translate("MainWindow", "6"))
-        self.MinCombo.setItemText(6, _translate("MainWindow", "7"))
-        self.MinCombo.setItemText(7, _translate("MainWindow", "8"))
-        self.MinCombo.setItemText(8, _translate("MainWindow", "9"))
-        self.MinCombo.setItemText(9, _translate("MainWindow", "10"))
-        self.MinCombo.setItemText(10, _translate("MainWindow", "11"))
-        self.MinCombo.setItemText(11, _translate("MainWindow", "12"))
-        self.MinCombo.setItemText(12, _translate("MainWindow", "13"))
-        self.MinCombo.setItemText(13, _translate("MainWindow", "14"))
-        self.MinCombo.setItemText(14, _translate("MainWindow", "15"))
-        self.MinCombo.setItemText(15, _translate("MainWindow", "16"))
-        self.MinCombo.setItemText(16, _translate("MainWindow", "17"))
-        self.MinCombo.setItemText(17, _translate("MainWindow", "18"))
-        self.MinCombo.setItemText(18, _translate("MainWindow", "19"))
-        self.MinCombo.setItemText(19, _translate("MainWindow", "20"))
-        self.MinCombo.setItemText(20, _translate("MainWindow", "21"))
-        self.MinCombo.setItemText(21, _translate("MainWindow", "22"))
-        self.MinCombo.setItemText(22, _translate("MainWindow", "23"))
-        self.MinCombo.setItemText(23, _translate("MainWindow", "24"))
-        self.MinCombo.setItemText(24, _translate("MainWindow", "25"))
-        self.MinCombo.setItemText(25, _translate("MainWindow", "26"))
-        self.MaxCombo.setCurrentText(_translate("MainWindow", "1"))
-        self.MaxCombo.setItemText(0, _translate("MainWindow", "1"))
-        self.MaxCombo.setItemText(1, _translate("MainWindow", "2"))
-        self.MaxCombo.setItemText(2, _translate("MainWindow", "3"))
-        self.MaxCombo.setItemText(3, _translate("MainWindow", "4"))
-        self.MaxCombo.setItemText(4, _translate("MainWindow", "5"))
-        self.MaxCombo.setItemText(5, _translate("MainWindow", "6"))
-        self.MaxCombo.setItemText(6, _translate("MainWindow", "7"))
-        self.MaxCombo.setItemText(7, _translate("MainWindow", "8"))
-        self.MaxCombo.setItemText(8, _translate("MainWindow", "9"))
-        self.MaxCombo.setItemText(9, _translate("MainWindow", "10"))
-        self.MaxCombo.setItemText(10, _translate("MainWindow", "11"))
-        self.MaxCombo.setItemText(11, _translate("MainWindow", "12"))
-        self.MaxCombo.setItemText(12, _translate("MainWindow", "13"))
-        self.MaxCombo.setItemText(13, _translate("MainWindow", "14"))
-        self.MaxCombo.setItemText(14, _translate("MainWindow", "15"))
-        self.MaxCombo.setItemText(15, _translate("MainWindow", "16"))
-        self.MaxCombo.setItemText(16, _translate("MainWindow", "17"))
-        self.MaxCombo.setItemText(17, _translate("MainWindow", "18"))
-        self.MaxCombo.setItemText(18, _translate("MainWindow", "19"))
-        self.MaxCombo.setItemText(19, _translate("MainWindow", "20"))
-        self.MaxCombo.setItemText(20, _translate("MainWindow", "21"))
-        self.MaxCombo.setItemText(21, _translate("MainWindow", "22"))
-        self.MaxCombo.setItemText(22, _translate("MainWindow", "23"))
-        self.MaxCombo.setItemText(23, _translate("MainWindow", "24"))
-        self.MaxCombo.setItemText(24, _translate("MainWindow", "25"))
-        self.MaxCombo.setItemText(25, _translate("MainWindow", "26"))
-        self.MaxLength.setText(_translate("MainWindow", "Max. Combo Length"))
-        self.CustomCharList.setText(_translate("MainWindow", "Custom Characters (Overrides the default alphabet list)"))
+
+        #Texts for the widgets
         self.Generate.setText(_translate("MainWindow", "Generate Combinations"))
+        self.DefaultListLabel.setText(_translate("MainWindow", "Use default alphabet list (abc...)"))
+        self.MaxComboLenLabel.setText(_translate("MainWindow", "Max. Combo Length"))
+        self.LeetCombinationsLabel.setText(_translate("MainWindow", "Include Leet Combinatons"))
+        self.WLSettingsLabel.setText(_translate("MainWindow", "Settings for word list"))
+        self.CustomListLabel.setText(_translate("MainWindow", "Custom Characters (Overrides the default alphabet list)"))
+        self.GenWordListLabel.setText(_translate("MainWindow", "Generate a word list"))
+        self.IncludeNumsLabel.setText(_translate("MainWindow", "Include Numbers"))
+        self.MinComboLenLabel.setText(_translate("MainWindow", "Min. Combo length"))
+        self.GenralSettingsLabel.setText(_translate("MainWindow", "General Settings"))
+        self.ExtandDefaultListLabel.setText(_translate("MainWindow", "Extend the default alphabet list"))
+        self.PrefixSuffixSettingsLabel.setText(_translate("MainWindow", "Prefix and Suffix settings"))
+        self.CustomWordsLabel.setText(_translate("MainWindow", "Custom word (Combinations for a custom word)"))
+        self.AddPrefixLabel.setText(_translate("MainWindow", "Add Prefix"))
+        self.AddSuffixLabel.setText(_translate("MainWindow", "Add Suffix"))
+        self.IncludeCombosLabel.setText(_translate("MainWindow", "Add combinations of prefixes and suffixes"))
+        self.IncludeNumsPreLabel.setText(_translate("MainWindow", "Add Numbers as prefix"))
+        self.IncludeNumsSufLabel.setText(_translate("MainWindow", "Add Numbers as suffix"))
+        self.SuffixNumLenLabel.setText(_translate("MainWindow", "Suffix Number Length"))
+        self.PrefixNumLenLabel.setText(_translate("MainWindow", "Prefix Number Length"))
 
 
 if __name__ == "__main__":

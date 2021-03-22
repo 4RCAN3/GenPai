@@ -31,7 +31,7 @@ class Settings():
 
     def WordCombos(self, min, max):
         combos = []
-        chrs = 'abcdefghijklmnopqrstuvwxyz'
+        chrs = 'ab'
         min_length, max_length = min, max    
         for n in range(min_length, max_length+1):
             for xs in product(chrs, repeat=n):
@@ -81,5 +81,3 @@ def window():
     win.setupUi(wind)
     sys.exit(app.exec_())
 
-
-window()
