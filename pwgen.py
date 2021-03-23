@@ -29,35 +29,40 @@ class Settings():
     Takes a string as an argument and returns a list of possible combination with leet substitution
     '''
 
-    def LeetCombo(self, password):
+    def LeetCombo(self, password, bool):
 
-        leet = {'a': "A4a@",'b': "Bb8",'c': "Cc",'d': "Dd",'e': "Ee3",'f': "Ff",
-        'g': "Gg6",'h': "Hh",'i': "Ii",'j': "Jj",'k': "Kk",
-        'l': "Ll",'m': "Mm",'n': "Nn",'o': "Oo0",'p': "Pp",'q': "Qq",
-        'r': "Rr",'s': "Ss5",'t': "Tt+",'u': "Uu",'v': "Vv",
-        'w': "Ww",'x': "Xx",'y': "Yy",'z': "Zz2", '1': '1', '2': '2', '3': '3eE',
-        '4': '4aA', '5': '5sS', '6': '6gG', '7': '7', '8': '8bB', '9': '9', '0': '0oO'}
-        
-        def getPlaces(leet, word):
-            wordList = []
-            for el in word:
-                if el.lower() in leet:
-                    wordList.append(leet[el.lower()])
-                else:
-                    wordList.append(el)
+        if bool == 2:
+
+            leet = {'a': "A4a@",'b': "Bb8",'c': "Cc",'d': "Dd",'e': "Ee3",'f': "Ff",
+            'g': "Gg6",'h': "Hh",'i': "Ii",'j': "Jj",'k': "Kk",
+            'l': "Ll",'m': "Mm",'n': "Nn",'o': "Oo0",'p': "Pp",'q': "Qq",
+            'r': "Rr",'s': "Ss5",'t': "Tt+",'u': "Uu",'v': "Vv",
+            'w': "Ww",'x': "Xx",'y': "Yy",'z': "Zz2", '1': '1', '2': '2', '3': '3eE',
+            '4': '4aA', '5': '5sS', '6': '6gG', '7': '7', '8': '8bB', '9': '9', '0': '0oO'}
             
-            return wordList
+            def getPlaces(leet, word):
+                wordList = []
+                for el in word:
+                    if el.lower() in leet:
+                        wordList.append(leet[el.lower()])
+                    else:
+                        wordList.append(el)
+                
+                return wordList
 
-        #getPlaces = lambda word: [leet[el.lower()] for el in word]
+            #getPlaces = lambda word: [leet[el.lower()] for el in word]
+            
+            all_combs = []
+            words = password.split(" ")
+            for count, word in enumerate(words):
+                for letters in product(*getPlaces(leet, word)):
+                    words[count] = "".join(letters)
+                    all_combs.append(" ".join(i for i in words))
+            
+            return all_combs
         
-        all_combs = []
-        words = password.split(" ")
-        for count, word in enumerate(words):
-            for letters in product(*getPlaces(leet, word)):
-                words[count] = "".join(letters)
-                all_combs.append(" ".join(i for i in words))
-        
-        return all_combs
+        else:
+            return []
 
 
 
@@ -69,15 +74,18 @@ class Settings():
     '''
 
 
-    def WordCombos(self, min, max, chr_set):
-        combos = []
-        chrs = chr_set
-        min_length, max_length = min, max    
-        for n in range(min_length, max_length+1):
-            for xs in product(chrs, repeat=n):
-                combos.append(''.join(xs))
-        
-        return combos
+    def WordCombos(self, min, max, chr_set, bool):
+        if bool == 2:
+            combos = []
+            chrs = chr_set
+            min_length, max_length = min, max    
+            for n in range(min_length, max_length+1):
+                for xs in product(chrs, repeat=n):
+                    combos.append(''.join(xs))
+            
+            return combos
+        else:
+            return []
 
     '''
     A function to add prefixes to the combinations
@@ -87,22 +95,27 @@ class Settings():
     to_comb -> A bool value to check if the prefix needs to have combinations
     '''
     
-    def AddPrefix(self, prefix, combos, to_comb):
+    def AddPrefix(self, prefix, combos, to_comb, bool):
 
-        after_prefix_combo = []
+        if bool == 2:
 
-        if to_comb:
-            prefixes = self.LeetCombo(prefix)
+            after_prefix_combo = []
+
+            if to_comb == 2:
+                prefixes = self.LeetCombo(prefix, 2)
+            else:
+                prefixes = [prefix]
+            
+            for combo in combos:
+                for pre_combo in prefixes:
+                    word = pre_combo + combo
+                    after_prefix_combo.append(word)
+
+            
+            return after_prefix_combo
+        
         else:
-            prefixes = [prefix]
-        
-        for combo in combos:
-            for pre_combo in prefixes:
-                word = pre_combo + combo
-                after_prefix_combo.append(word)
-
-        
-        return after_prefix_combo
+            return []
 
 
     
@@ -114,22 +127,27 @@ class Settings():
     to_comb -> A bool value to check if the suffix needs to have combinations
     '''
     
-    def AddSuffix(self, suffix, combos, to_comb):
+    def AddSuffix(self, suffix, combos, to_comb, bool):
 
-        after_suffix_combo = []
+        if bool == 2:
 
-        if to_comb:
-            suffixes = self.LeetCombo(suffix)
+            after_suffix_combo = []
+
+            if to_comb == 2:
+                suffixes = self.LeetCombo(suffix)
+            else:
+                suffixes = [suffix]
+            
+            for combo in combos:
+                for suf_combo in suffixes:
+                    word = combo + suf_combo
+                    after_suffix_combo.append(word)
+
+            
+            return after_suffix_combo
+        
         else:
-            suffixes = [suffix]
-        
-        for combo in combos:
-            for suf_combo in suffixes:
-                word = combo + suf_combo
-                after_suffix_combo.append(word)
-
-        
-        return after_suffix_combo
+            return []
 
     
     '''
@@ -141,17 +159,22 @@ class Settings():
     '''
     
 
-    def AddNumPrefix(self, NumMinLength, NumMaxLength, combos):
-        after_prefix_combo = []
+    def AddNumPrefix(self, NumMinLength, NumMaxLength, combos, bool):
 
-        number_combos = self.WordCombos(NumMinLength, NumMaxLength, '0123456789')
+        if bool == 2:
+            after_prefix_combo = []
 
-        for combo in combos:
-            for pre_combo in number_combos:
-                word = str(pre_combo) + combo
-                after_prefix_combo.append(word)
+            number_combos = self.WordCombos(NumMinLength, NumMaxLength, '0123456789', 2)
 
-        return after_prefix_combo
+            for combo in combos:
+                for pre_combo in number_combos:
+                    word = str(pre_combo) + combo
+                    after_prefix_combo.append(word)
+
+            return after_prefix_combo
+
+        else:
+            return []
 
     
     '''
@@ -163,17 +186,22 @@ class Settings():
     '''
     
 
-    def AddNumSuffix(self, NumMinLength, NumMaxLength, combos):
-        after_suffix_combo = []
+    def AddNumSuffix(self, NumMinLength, NumMaxLength, combos, bool):
 
-        number_combos = self.WordCombos(NumMinLength, NumMaxLength, '0123456789')
+        if bool == 2:
+            after_suffix_combo = []
 
-        for combo in combos:
-            for suf_combo in number_combos:
-                word = combo + str(suf_combo)
-                after_suffix_combo.append(word)
+            number_combos = self.WordCombos(NumMinLength, NumMaxLength, '0123456789', 2)
 
-        return after_suffix_combo
+            for combo in combos:
+                for suf_combo in number_combos:
+                    word = combo + str(suf_combo)
+                    after_suffix_combo.append(word)
+
+            return after_suffix_combo
+            
+        else:
+            return []
 
 
 
@@ -186,5 +214,4 @@ class Settings():
             for word in combos:
                 data.write(word + '\n')
             data.close()
-
 

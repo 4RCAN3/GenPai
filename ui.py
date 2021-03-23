@@ -9,9 +9,67 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+import pwgen
 
 
 class Ui_MainWindow(object):
+
+    def checked(self):
+        
+        final_combs = []
+        settings = pwgen.Settings()
+
+        IncLeet = self.IncludeLeetCheck.checkState()
+        IncWL = self.IncludeWLCheck.checkState()
+        IncComboPS = self.IncludeCombosCheck.checkState()
+        IncNumsPre = self.IncludeNumsPreCheck.checkState()
+        IncNumsSuff = self.IncludeNumsSufCheck.checkState()
+        IncNumsInWL = self.IncludeNumsCheck.checkState()
+        UseDefaultCharList = self.DefaultListCheck.checkState()
+        customWord = self.CustomWordsText.toPlainText()
+        prefixText = self.AddPrefixText.toPlainText()
+        suffixText = self.AddSuffixText.toPlainText()
+        customList = self.CustomListText.toPlainText()
+        extendList = self.ExtendDefaultListText.toPlainText()
+        prefixNumLen = self.PrefixNumLenCheck.value()
+        suffixNumLen = self.SuffixNumLenCheck.value()
+        MinComboLen = self.MinComboLenCheck.value()
+        MaxComboLen = self.MaxComboLenCheck.value()
+
+        if UseDefaultCharList == 2:
+            chrs = 'abcdefghijklmnopqrstuvwxyz'
+        elif IncNumsInWL:
+            chrs = 'abcdefghijklmnopqrstuvwxyz0123456789' 
+        elif customList != '':
+            chrs = customList
+        else:
+            chrs = 'abcdefghijklmnopqrstuvwxyz' + extendList
+        
+        if prefixText != '':
+            add_pre = 2
+        else:
+            add_pre = 0
+
+        if suffixText != '':
+            add_suf = 2
+        else:
+            add_suf = 0
+
+        leet_combos = settings.LeetCombo(customWord, IncLeet)
+        word_list_combos = settings.WordCombos(MinComboLen, MaxComboLen, chrs, IncWL)
+        final_combs = leet_combos + word_list_combos
+        prefix_combos = settings.AddPrefix(prefixText, final_combs, IncComboPS, add_pre)
+        suffix_combos = settings.AddSuffix(suffixText, final_combs, IncComboPS, add_suf)
+        final_combs += prefix_combos + suffix_combos
+        prefixNumCombos = settings.AddNumPrefix(prefixNumLen, prefixNumLen, final_combs, IncNumsPre)
+        suffixNumCombos = settings.AddNumSuffix(suffixNumLen, suffixNumLen, final_combs, IncNumsSuff)
+        final_combs += prefixNumCombos + suffixNumCombos
+
+        settings.WritePass(final_combs)
+
+        print("Added Combinations")
+
+
     def setupUi(self, MainWindow):
 
 
@@ -303,6 +361,7 @@ class Ui_MainWindow(object):
         self.GenerateButton = QtWidgets.QPushButton(self.centralwidget)
         self.GenerateButton.setGeometry(QtCore.QRect(420, 420, 151, 61))
         self.GenerateButton.setObjectName("GenerateButton")
+        self.GenerateButton.clicked.connect(self.checked)
 
 
         MainWindow.setCentralWidget(self.centralwidget)
