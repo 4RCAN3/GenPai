@@ -21,4 +21,5 @@ The GUI was made successful using the PyQt5 module in Python.
 - Use default alphabet string to generate the wordlist
 - Minimum and Maximum combo lengths
 
-![image](https://user-images.githubusercontent.com/69053040/112035440-8ee0ff80-8b65-11eb-8e50-c59363f9adcc.png)
+![image](https://user-images.githubusercontent.com/69053040/112120536-592f2b80-8be4-11eb-8534-c90524b41dba.png)
+
