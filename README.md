@@ -5,7 +5,7 @@ The GUI was made successful using the PyQt5 module in Python.
 ## Languages Used
 <img src = "https://img.shields.io/badge/python%20-%236C0101.svg?style=for-the-badge&logo=python&logoColor=white" alt="python"/>
 
-## Options available in the tool
+## Customization
 ### General Settings
 - Leet Combinations: This option allows you to general combinations in leet. For ex: `leet` in _"Leet Speak"_ is `1337`, where `l = 1`, `e = 3`, and `t = 7`
 - Generate a word list
@@ -28,9 +28,9 @@ The GUI was made successful using the PyQt5 module in Python.
 - If you want to include leet combinations, check the `Leet Combinations` options.
 - To add a prefix to your combinations, type in the prefix you want in your combinations in the `Add Prefix` text box.
 - To add a suffix to your combinations, type in the suffic you want in your combinations in the `Add Suffix` text box.
-- To add the combinations of prefix and suffix, check the `Add combinations of prefix and suffix` option.
-- If you want to include numbers as a prefix, check the `Add numbers as your prefix`, you can then change the `Prefix Number Length` accordingly.
-- If you want to include numbers as a suffix, check the "Add numbers as your suffix", you can then change the `Suffix Number Length` accordingly.
+- To add the combinations of prefix and suffix, check the `Add combinations of prefix and suffix` option. 
+- If you want to include numbers as a prefix, check the `Add numbers as your prefix`, you can then change the `Prefix Number Length` accordingly. (Choosing this will add combination of numerical prefixes for the selected length, if you want to use a constant numerical prefix use the `Add Prefix` text box)
+- If you want to include numbers as a suffix, check the "Add numbers as your suffix", you can then change the `Suffix Number Length` accordingly. (Choosing this will add combination of numerical suffixes for the selected length, if you want to use a constant numerical suffix use the `Add Suffix` text box)
 
 ###### If you want to generate a WordList as well, check the `Generate a word list` option.
 - If you want to include numbers in the word list, check the `Include Number` option.
@@ -39,5 +39,14 @@ The GUI was made successful using the PyQt5 module in Python.
 - If you want to use a custom character list instead of the default list, that is override the default list, enter the characters in the `Custom Characters` textbox.
 - To extend the default alphabet list, rather than overriding the default list, enter the characters in `Extend the default alphabet list` textbox.
 
+
+##Installation And Setup
+
+- Install the files by using `git clone https://github.com/4RCAN3/PG/`
+- You can also install the zip file for the code files
+- Once Installed, open the command line in the directory where the files are saved
+- Use `gen\scripts\activate` to activate the virtual environment
+- To run the script, use `python ui.py`
+- You should see a User Interface.
 
 ![image](https://user-images.githubusercontent.com/69053040/112120536-592f2b80-8be4-11eb-8534-c90524b41dba.png)
