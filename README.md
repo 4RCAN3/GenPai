@@ -40,7 +40,7 @@ The GUI was made successful using the PyQt5 module in Python.
 - To extend the default alphabet list, rather than overriding the default list, enter the characters in `Extend the default alphabet list` textbox.
 
 
-##Installation And Setup
+## Installation And Setup
 
 - Install the files by using `git clone https://github.com/4RCAN3/PG/`
 - You can also install the zip file for the code files
