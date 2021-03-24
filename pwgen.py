@@ -2,7 +2,6 @@ from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QApplication, QMainWindow, QHBoxLayout
 from itertools import product
 import sys
-import test
 
 
 
