@@ -46,6 +46,7 @@ The GUI was made successful using the PyQt5 module in Python.
 - You can also install the zip file for the code files
 - Once Installed, open the command line in the directory where the files are saved
 - Use `gen\scripts\activate` to activate the virtual environment
+- Install the requirements by `pip install -r requirements.txt`
 - To run the script, use `python ui.py`
 - You should see a User Interface.
 
