@@ -14,11 +14,23 @@ import pwgen
 
 class Ui_MainWindow(object):
 
+
+    '''
+    Three functions:
+    Checked - When the button in the ui gets clicked, this function is called. Applies all the settings taken from the ui and makes combinations
+    SetupUI - Setting up of the main UI
+    retranslateui -  Naming of components
+    '''
+
     def checked(self):
         
+        #Final Combinations after applied settings will be stored here
         final_combs = []
+        #Creating the settings object 
         settings = pwgen.Settings()
 
+
+        #Variables inputted from the ui
         IncLeet = self.IncludeLeetCheck.checkState()
         IncWL = self.IncludeWLCheck.checkState()
         IncComboPS = self.IncludeCombosCheck.checkState()
@@ -35,6 +47,8 @@ class Ui_MainWindow(object):
         suffixNumLen = self.SuffixNumLenCheck.value()
         MinComboLen = self.MinComboLenCheck.value()
         MaxComboLen = self.MaxComboLenCheck.value()
+
+
 
         if UseDefaultCharList == 2:
             chrs = 'abcdefghijklmnopqrstuvwxyz'
@@ -55,6 +69,8 @@ class Ui_MainWindow(object):
         else:
             add_suf = 0
 
+        
+        #Applying the settings
         leet_combos = settings.LeetCombo(customWord, IncLeet)
         word_list_combos = settings.WordCombos(MinComboLen, MaxComboLen, chrs, IncWL)
         final_combs = leet_combos + word_list_combos
@@ -64,7 +80,8 @@ class Ui_MainWindow(object):
         prefixNumCombos = settings.AddNumPrefix(prefixNumLen, prefixNumLen, final_combs, IncNumsPre)
         suffixNumCombos = settings.AddNumSuffix(suffixNumLen, suffixNumLen, final_combs, IncNumsSuff)
         final_combs += prefixNumCombos + suffixNumCombos
-
+        
+        #Writing the final combinations to the text file
         settings.WritePass(final_combs)
 
         print("Added Combinations")
