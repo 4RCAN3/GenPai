@@ -1,0 +1,1048 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PasswordGenerator</class>
+ <widget class="QMainWindow" name="PasswordGenerator">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>569</width>
+    <height>504</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="autoFillBackground">
+   <bool>true</bool>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QScrollArea" name="scrollArea">
+      <property name="styleSheet">
+       <string notr="true">background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(122, 65, 151, 255), stop:1 rgba(45, 194, 163, 255))</string>
+      </property>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="scrollAreaWidgetContents_9">
+       <property name="geometry">
+        <rect>
+         <x>-26</x>
+         <y>0</y>
+         <width>618</width>
+         <height>1318</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QFrame" name="frame">
+          <property name="minimumSize">
+           <size>
+            <width>600</width>
+            <height>1300</height>
+           </size>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <widget class="QWidget" name="widget" native="true">
+           <property name="geometry">
+            <rect>
+             <x>-11</x>
+             <y>-1</y>
+             <width>1801</width>
+             <height>3000</height>
+            </rect>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>1800</width>
+             <height>1800</height>
+            </size>
+           </property>
+           <property name="autoFillBackground">
+            <bool>false</bool>
+           </property>
+           <widget class="QCheckBox" name="IncludeLeetCheck">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>70</y>
+              <width>13</width>
+              <height>13</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background: rgb(255, 255, 255)</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+           <widget class="QCheckBox" name="IncludeNumsSufCheck">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>370</y>
+              <width>13</width>
+              <height>13</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background: rgb(255, 255, 255)</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+           <widget class="QLabel" name="DefaultListLabel">
+            <property name="geometry">
+             <rect>
+              <x>160</x>
+              <y>780</y>
+              <width>161</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background: rgb(255, 255, 255)</string>
+            </property>
+            <property name="text">
+             <string>Use default alphabet list (abc...)</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+           <widget class="QSpinBox" name="MaxComboLenCheck">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>870</y>
+              <width>42</width>
+              <height>22</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background: rgb(255, 255, 255)</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="AddPrefixLabel">
+            <property name="geometry">
+             <rect>
+              <x>160</x>
+              <y>230</y>
+              <width>61</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background: rgb(255, 255, 255)</string>
+            </property>
+            <property name="text">
+             <string>Add Prefix</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+           <widget class="QLabel" name="IncludeNumsLabel">
+            <property name="geometry">
+             <rect>
+              <x>160</x>
+              <y>740</y>
+              <width>91</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background: rgb(255, 255, 255)</string>
+            </property>
+            <property name="text">
+             <string>Include Numbers</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+           <widget class="QTextEdit" name="CustomListText">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>910</y>
+              <width>101</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background: rgb(255, 255, 255)</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="CustomListLabel">
+            <property name="geometry">
+             <rect>
+              <x>160</x>
+              <y>910</y>
+              <width>271</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background: rgb(255, 255, 255)</string>
+            </property>
+            <property name="text">
+             <string>Custom Characters (Overrides the default alphabet list)</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+           <widget class="QSpinBox" name="MinComboLenCheck">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>830</y>
+              <width>42</width>
+              <height>22</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background: rgb(255, 255, 255)</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="SuffixNumLenLabel">
+            <property name="geometry">
+             <rect>
+              <x>160</x>
+              <y>450</y>
+              <width>151</width>
+              <height>20</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background: rgb(255, 255, 255)</string>
+            </property>
+            <property name="text">
+             <string>Max. Combo Length for Suffix</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+           <widget class="QLabel" name="LeetCombinationsLabel">
+            <property name="geometry">
+             <rect>
+              <x>160</x>
+              <y>70</y>
+              <width>131</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="autoFillBackground">
+             <bool>false</bool>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background: rgb(255, 255, 255)</string>
+            </property>
+            <property name="text">
+             <string>Include Leet Combinatons</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+           <widget class="QLabel" name="IncludeCombosLabel">
+            <property name="geometry">
+             <rect>
+              <x>160</x>
+              <y>310</y>
+              <width>211</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background: rgb(255, 255, 255)</string>
+            </property>
+            <property name="text">
+             <string>Add combinations of prefixes and suffixes</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+           <widget class="QLabel" name="MaxComboLenLabel">
+            <property name="geometry">
+             <rect>
+              <x>160</x>
+              <y>870</y>
+              <width>101</width>
+              <height>20</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background: rgb(255, 255, 255)</string>
+            </property>
+            <property name="text">
+             <string>Max. Combo Length</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+           <widget class="QCheckBox" name="IncludeNumsCheck">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>740</y>
+              <width>13</width>
+              <height>13</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background: rgb(255, 255, 255)</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+           <widget class="QLabel" name="GenWordListLabel">
+            <property name="geometry">
+             <rect>
+              <x>160</x>
+              <y>100</y>
+              <width>111</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <property name="autoFillBackground">
+             <bool>false</bool>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background: rgb(255, 255, 255)</string>
+            </property>
+            <property name="text">
+             <string>Generate a word list</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+           <widget class="QLabel" name="IncludeNumsSufLabel">
+            <property name="geometry">
+             <rect>
+              <x>160</x>
+              <y>370</y>
+              <width>131</width>
+              <height>20</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background: rgb(255, 255, 255)</string>
+            </property>
+            <property name="text">
+             <string>Add Numbers as suffix</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+           <widget class="QLabel" name="PrefixSuffixSettingsLabel">
+            <property name="geometry">
+             <rect>
+              <x>30</x>
+              <y>190</y>
+              <width>211</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background: rgb(255, 255, 255)</string>
+            </property>
+            <property name="text">
+             <string>Prefix and Suffix settings</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+           <widget class="QTextEdit" name="CustomWordsText">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>130</y>
+              <width>104</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background: rgb(255, 255, 255)</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="WLSettingsLabel">
+            <property name="geometry">
+             <rect>
+              <x>30</x>
+              <y>660</y>
+              <width>191</width>
+              <height>51</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="autoFillBackground">
+             <bool>false</bool>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background: rgb(255, 255, 255)</string>
+            </property>
+            <property name="text">
+             <string>Settings for word list</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+           <widget class="QLabel" name="PrefixNumLenLabel">
+            <property name="geometry">
+             <rect>
+              <x>160</x>
+              <y>410</y>
+              <width>151</width>
+              <height>20</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background: rgb(255, 255, 255)</string>
+            </property>
+            <property name="text">
+             <string>Max. Combo length for prefix</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+           <widget class="QCheckBox" name="IncludeCombosCheck">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>310</y>
+              <width>13</width>
+              <height>13</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background: rgb(255, 255, 255)</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="checked">
+             <bool>false</bool>
+            </property>
+           </widget>
+           <widget class="QLabel" name="CustomWordsLabel">
+            <property name="geometry">
+             <rect>
+              <x>160</x>
+              <y>130</y>
+              <width>231</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background: rgb(255, 255, 255)</string>
+            </property>
+            <property name="text">
+             <string>Custom word (Combinations for a custom word)</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+           <widget class="QCheckBox" name="IncludeWLCheck">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>100</y>
+              <width>13</width>
+              <height>13</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background: rgb(255, 255, 255)</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="checked">
+             <bool>false</bool>
+            </property>
+           </widget>
+           <widget class="QTextEdit" name="ExtendDefaultListText">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>960</y>
+              <width>101</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background: rgb(255, 255, 255)</string>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="GenerateButton">
+            <property name="geometry">
+             <rect>
+              <x>90</x>
+              <y>1220</y>
+              <width>151</width>
+              <height>61</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background: rgb(255, 255, 255)</string>
+            </property>
+            <property name="text">
+             <string>Generate Combinations</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="MinComboLenLabel">
+            <property name="geometry">
+             <rect>
+              <x>160</x>
+              <y>820</y>
+              <width>91</width>
+              <height>20</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background: rgb(255, 255, 255)</string>
+            </property>
+            <property name="text">
+             <string>Min. Combo length</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+           <widget class="QTextEdit" name="AddPrefixText">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>220</y>
+              <width>104</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background: rgb(255, 255, 255)</string>
+            </property>
+           </widget>
+           <widget class="QTextEdit" name="AddSuffixText">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>270</y>
+              <width>104</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background: rgb(255, 255, 255)</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="IncludeNumsPreLabel">
+            <property name="geometry">
+             <rect>
+              <x>160</x>
+              <y>340</y>
+              <width>131</width>
+              <height>20</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background: rgb(255, 255, 255)</string>
+            </property>
+            <property name="text">
+             <string>Add Numbers as prefix</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+           <widget class="QLabel" name="ExtandDefaultListLabel">
+            <property name="geometry">
+             <rect>
+              <x>160</x>
+              <y>960</y>
+              <width>161</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background: rgb(255, 255, 255)</string>
+            </property>
+            <property name="text">
+             <string>Extend the default alphabet list</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+           <widget class="QSpinBox" name="SuffixNumLenCheck">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>450</y>
+              <width>42</width>
+              <height>22</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background: rgb(255, 255, 255)</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="GenralSettingsLabel">
+            <property name="geometry">
+             <rect>
+              <x>30</x>
+              <y>20</y>
+              <width>151</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="autoFillBackground">
+             <bool>false</bool>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background: rgb(255, 255, 255)</string>
+            </property>
+            <property name="text">
+             <string>General Settings</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+           <widget class="QSpinBox" name="PrefixNumLenCheck">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>410</y>
+              <width>42</width>
+              <height>22</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background: rgb(255, 255, 255)</string>
+            </property>
+           </widget>
+           <widget class="QCheckBox" name="DefaultListCheck">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>780</y>
+              <width>13</width>
+              <height>13</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background: rgb(255, 255, 255)</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+           <widget class="QCheckBox" name="IncludeNumsPreCheck">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>340</y>
+              <width>13</width>
+              <height>13</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background: rgb(255, 255, 255)</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="checked">
+             <bool>false</bool>
+            </property>
+           </widget>
+           <widget class="QLabel" name="AddSuffixLabel">
+            <property name="geometry">
+             <rect>
+              <x>160</x>
+              <y>270</y>
+              <width>71</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background: rgb(255, 255, 255)</string>
+            </property>
+            <property name="text">
+             <string>Add Suffix</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+           <widget class="QSpinBox" name="MinPreComboLenCheck">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>490</y>
+              <width>42</width>
+              <height>22</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background: rgb(255, 255, 255)</string>
+            </property>
+           </widget>
+           <widget class="QSpinBox" name="PrefixNumLenCheck_3">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>530</y>
+              <width>42</width>
+              <height>22</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background: rgb(255, 255, 255)</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="MinPreComboLenLabel">
+            <property name="geometry">
+             <rect>
+              <x>160</x>
+              <y>490</y>
+              <width>151</width>
+              <height>20</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background: rgb(255, 255, 255)</string>
+            </property>
+            <property name="text">
+             <string>Min. Combo length for prefix</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+           <widget class="QLabel" name="MinSufComboLenLabel">
+            <property name="geometry">
+             <rect>
+              <x>160</x>
+              <y>530</y>
+              <width>151</width>
+              <height>20</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background: rgb(255, 255, 255)</string>
+            </property>
+            <property name="text">
+             <string>Min. Combo length for suffix</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+           <widget class="QCheckBox" name="IncludeWLpreCheck">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>580</y>
+              <width>13</width>
+              <height>13</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background: rgb(255, 255, 255)</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+           <widget class="QLabel" name="IncludeWLPrelabel">
+            <property name="geometry">
+             <rect>
+              <x>160</x>
+              <y>569</y>
+              <width>141</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background: rgb(255, 255, 255)</string>
+            </property>
+            <property name="text">
+             <string>Use a wordlist as prefix</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+           <widget class="QCheckBox" name="IncludeNumsCheck_3">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>620</y>
+              <width>13</width>
+              <height>13</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background: rgb(255, 255, 255)</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+           <widget class="QLabel" name="MaxNumComboLenLabel_3">
+            <property name="geometry">
+             <rect>
+              <x>160</x>
+              <y>610</y>
+              <width>141</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background: rgb(255, 255, 255)</string>
+            </property>
+            <property name="text">
+             <string>Use a wordlist as suffix</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+           <widget class="QLabel" name="StoreComboLabel">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>1030</y>
+              <width>191</width>
+              <height>51</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="autoFillBackground">
+             <bool>false</bool>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background: rgb(255, 255, 255)</string>
+            </property>
+            <property name="text">
+             <string>Store Combinations</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+           <widget class="QCheckBox" name="UseDefTxtFileCheck">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>1110</y>
+              <width>13</width>
+              <height>13</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background: rgb(255, 255, 255)</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+           <widget class="QTextEdit" name="UseCustomTxtFileCheck">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>1150</y>
+              <width>101</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background: rgb(255, 255, 255)</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="UseDefTxtFileLabel">
+            <property name="geometry">
+             <rect>
+              <x>160</x>
+              <y>1100</y>
+              <width>161</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background: rgb(255, 255, 255)</string>
+            </property>
+            <property name="text">
+             <string>Use the default text file</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+           <widget class="QLabel" name="UseCustomTxtFileLabel">
+            <property name="geometry">
+             <rect>
+              <x>160</x>
+              <y>1150</y>
+              <width>161</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background: rgb(255, 255, 255)</string>
+            </property>
+            <property name="text">
+             <string>Use a custom text file </string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="pushButton">
+            <property name="geometry">
+             <rect>
+              <x>434</x>
+              <y>20</y>
+              <width>91</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background: rgb(255, 255, 255)</string>
+            </property>
+            <property name="text">
+             <string>Help</string>
+            </property>
+           </widget>
+           <zorder>IncludeLeetCheck</zorder>
+           <zorder>IncludeNumsSufCheck</zorder>
+           <zorder>DefaultListLabel</zorder>
+           <zorder>MaxComboLenCheck</zorder>
+           <zorder>AddPrefixLabel</zorder>
+           <zorder>IncludeNumsLabel</zorder>
+           <zorder>CustomListText</zorder>
+           <zorder>CustomListLabel</zorder>
+           <zorder>MinComboLenCheck</zorder>
+           <zorder>SuffixNumLenLabel</zorder>
+           <zorder>LeetCombinationsLabel</zorder>
+           <zorder>IncludeCombosLabel</zorder>
+           <zorder>MaxComboLenLabel</zorder>
+           <zorder>IncludeNumsCheck</zorder>
+           <zorder>GenWordListLabel</zorder>
+           <zorder>IncludeNumsSufLabel</zorder>
+           <zorder>PrefixSuffixSettingsLabel</zorder>
+           <zorder>CustomWordsText</zorder>
+           <zorder>WLSettingsLabel</zorder>
+           <zorder>PrefixNumLenLabel</zorder>
+           <zorder>IncludeCombosCheck</zorder>
+           <zorder>CustomWordsLabel</zorder>
+           <zorder>IncludeWLCheck</zorder>
+           <zorder>ExtendDefaultListText</zorder>
+           <zorder>GenerateButton</zorder>
+           <zorder>MinComboLenLabel</zorder>
+           <zorder>AddPrefixText</zorder>
+           <zorder>AddSuffixText</zorder>
+           <zorder>IncludeNumsPreLabel</zorder>
+           <zorder>ExtandDefaultListLabel</zorder>
+           <zorder>SuffixNumLenCheck</zorder>
+           <zorder>PrefixNumLenCheck</zorder>
+           <zorder>DefaultListCheck</zorder>
+           <zorder>IncludeNumsPreCheck</zorder>
+           <zorder>AddSuffixLabel</zorder>
+           <zorder>GenralSettingsLabel</zorder>
+           <zorder>MinPreComboLenCheck</zorder>
+           <zorder>PrefixNumLenCheck_3</zorder>
+           <zorder>MinPreComboLenLabel</zorder>
+           <zorder>MinSufComboLenLabel</zorder>
+           <zorder>IncludeWLpreCheck</zorder>
+           <zorder>IncludeWLPrelabel</zorder>
+           <zorder>IncludeNumsCheck_3</zorder>
+           <zorder>MaxNumComboLenLabel_3</zorder>
+           <zorder>StoreComboLabel</zorder>
+           <zorder>UseDefTxtFileCheck</zorder>
+           <zorder>UseCustomTxtFileCheck</zorder>
+           <zorder>UseDefTxtFileLabel</zorder>
+           <zorder>UseCustomTxtFileLabel</zorder>
+           <zorder>pushButton</zorder>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>569</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
