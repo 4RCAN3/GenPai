@@ -1,4 +1,7 @@
 {
     "python.pythonPath": "gen\\Scripts\\python.exe",
-    "git.ignoreLimitWarning": true
+    "git.ignoreLimitWarning": true,
+    "autoDocstring.includeName": true,
+    "autoDocstring.quoteStyle": "'''",
+    "autoDocstring.startOnNewLine": true
 }
