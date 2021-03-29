@@ -9,7 +9,6 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-import help
 
 
 class Ui_PasswordGenerator(object):
@@ -34,7 +33,7 @@ class Ui_PasswordGenerator(object):
         self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget)
         self.verticalLayout.setObjectName("verticalLayout")
         self.scrollArea = QtWidgets.QScrollArea(self.centralwidget)
-        self.scrollArea.setStyleSheet("background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(122, 65, 151, 255), stop:1 rgba(45, 194, 163, 255))")
+        self.scrollArea.setStyleSheet("background: qlineargradient(spread:pad, x1:0.113, y1:0.119455, x2:0.971591, y2:0.972, stop:0.0227273 rgba(0, 0, 0, 255), stop:1 rgba(255, 0, 0, 255))")
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName("scrollArea")
         self.scrollAreaWidgetContents_9 = QtWidgets.QWidget()
@@ -939,40 +938,3 @@ class Ui_PasswordGenerator(object):
         self.UseDefTxtFileLabel.setText(_translate("PasswordGenerator", "Use the default text file"))
         self.UseCustomTxtFileLabel.setText(_translate("PasswordGenerator", "Use a custom text file "))
         self.pushButton.setText(_translate("PasswordGenerator", "Help"))
-
-
-class controller:
-    def __init__(self):
-        pass
-
-    def help_show(self):
-        '''
-        help_show [Shows the main window]
-        '''
-
-        self.window = QtWidgets.QMainWindow()
-        self.ui = Ui_PasswordGenerator()
-        self.ui.setupUi(self.window)
-        self.ui.pushButton.clicked.connect(self.show_help)
-
-        self.window.show()
-    
-    def show_help(self):
-        '''
-        show_help [Shows the felp window]
-        '''
-
-        self.help_window = QtWidgets.QMainWindow()
-        self.ui = help.Ui_MainWindow()
-        self.ui.setupUi(self.help_window)
-        
-        self.help_window.show()
-
-
-
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    control = controller()
-    control.help_show()
-    sys.exit(app.exec_())
