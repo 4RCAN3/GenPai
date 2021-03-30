@@ -33,7 +33,7 @@ class Ui_PasswordGenerator(object):
         self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget)
         self.verticalLayout.setObjectName("verticalLayout")
         self.scrollArea = QtWidgets.QScrollArea(self.centralwidget)
-        self.scrollArea.setStyleSheet("background: qlineargradient(spread:pad, x1:0.113, y1:0.119455, x2:0.971591, y2:0.972, stop:0.0227273 rgba(0, 0, 0, 255), stop:1 rgba(255, 0, 0, 255))")
+        self.scrollArea.setStyleSheet("background: qlineargradient(spread:pad, x1:0.006, y1:0, x2:0.745, y2:0, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(0, 0, 127, 255))")
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName("scrollArea")
         self.scrollAreaWidgetContents_9 = QtWidgets.QWidget()
@@ -647,10 +647,10 @@ class Ui_PasswordGenerator(object):
         self.MinPreComboLenCheck.setObjectName("MinPreComboLenCheck")
 
         #add docstring
-        self.PrefixNumLenCheck_3 = QtWidgets.QSpinBox(self.widget)
-        self.PrefixNumLenCheck_3.setGeometry(QtCore.QRect(40, 530, 42, 22))
-        self.PrefixNumLenCheck_3.setStyleSheet("background: rgb(255, 255, 255)")
-        self.PrefixNumLenCheck_3.setObjectName("PrefixNumLenCheck_3")
+        self.MinSufComboLenCheck = QtWidgets.QSpinBox(self.widget)
+        self.MinSufComboLenCheck.setGeometry(QtCore.QRect(40, 530, 42, 22))
+        self.MinSufComboLenCheck.setStyleSheet("background: rgb(255, 255, 255)")
+        self.MinSufComboLenCheck.setObjectName("MinSufComboLenCheck")
 
         '''
          MinPreComboLenLabel:
@@ -715,20 +715,38 @@ class Ui_PasswordGenerator(object):
         self.IncludeWLPrelabel.setStyleSheet("background: rgb(255, 255, 255)")
         self.IncludeWLPrelabel.setWordWrap(True)
         self.IncludeWLPrelabel.setObjectName("IncludeWLPrelabel")
+        
+        '''
+         IncludeWLSufCheck:
+            A check box to include a wordlist as prefix.
+        
+         Settings:
+            Background: White (rgb: 255, 255, 255)
+            Text: 
+            Type: CheckBox
+        ''' 
+      
+        self.IncludeWLSufCheck = QtWidgets.QCheckBox(self.widget)
+        self.IncludeWLSufCheck.setGeometry(QtCore.QRect(40, 620, 13, 13))
+        self.IncludeWLSufCheck.setStyleSheet("background: rgb(255, 255, 255)")
+        self.IncludeWLSufCheck.setText("")
+        self.IncludeWLSufCheck.setObjectName("IncludeWLSufCheck")
+        
+        '''
+         IncludeWLSufLabel:
+            A label to include a word list as suffix.
+        
+         Settings:
+            Background: White (rgb: 255, 255, 255)
+            Text: 
+            Type: Label
+        ''' 
 
-        #add docstring
-        self.IncludeNumsCheck_3 = QtWidgets.QCheckBox(self.widget)
-        self.IncludeNumsCheck_3.setGeometry(QtCore.QRect(40, 620, 13, 13))
-        self.IncludeNumsCheck_3.setStyleSheet("background: rgb(255, 255, 255)")
-        self.IncludeNumsCheck_3.setText("")
-        self.IncludeNumsCheck_3.setObjectName("IncludeNumsCheck_3")
-
-
-        self.MaxNumComboLenLabel_3 = QtWidgets.QLabel(self.widget)
-        self.MaxNumComboLenLabel_3.setGeometry(QtCore.QRect(160, 610, 141, 31))
-        self.MaxNumComboLenLabel_3.setStyleSheet("background: rgb(255, 255, 255)")
-        self.MaxNumComboLenLabel_3.setWordWrap(True)
-        self.MaxNumComboLenLabel_3.setObjectName("MaxNumComboLenLabel_3")
+        self.IncludeWLSufLabel = QtWidgets.QLabel(self.widget)
+        self.IncludeWLSufLabel.setGeometry(QtCore.QRect(160, 610, 141, 31))
+        self.IncludeWLSufLabel.setStyleSheet("background: rgb(255, 255, 255)")
+        self.IncludeWLSufLabel.setWordWrap(True)
+        self.IncludeWLSufLabel.setObjectName("IncludeWLSufLabel")
 
         '''
          StoreComboLabel:
@@ -873,13 +891,13 @@ class Ui_PasswordGenerator(object):
         self.AddSuffixLabel.raise_()
         self.GenralSettingsLabel.raise_()
         self.MinPreComboLenCheck.raise_()
-        self.PrefixNumLenCheck_3.raise_()
+        self.MinSufComboLenCheck.raise_()
         self.MinPreComboLenLabel.raise_()
         self.MinSufComboLenLabel.raise_()
         self.IncludeWLpreCheck.raise_()
         self.IncludeWLPrelabel.raise_()
-        self.IncludeNumsCheck_3.raise_()
-        self.MaxNumComboLenLabel_3.raise_()
+        self.IncludeWLSufCheck.raise_()
+        self.IncludeWLSufLabel.raise_()
         self.StoreComboLabel.raise_()
         self.UseDefTxtFileCheck.raise_()
         self.UseCustomTxtFileCheck.raise_()
@@ -933,7 +951,7 @@ class Ui_PasswordGenerator(object):
         self.MinPreComboLenLabel.setText(_translate("PasswordGenerator", "Min. Combo length for prefix"))
         self.MinSufComboLenLabel.setText(_translate("PasswordGenerator", "Min. Combo length for suffix"))
         self.IncludeWLPrelabel.setText(_translate("PasswordGenerator", "Use a wordlist as prefix"))
-        self.MaxNumComboLenLabel_3.setText(_translate("PasswordGenerator", "Use a wordlist as suffix"))
+        self.IncludeWLSufLabel.setText(_translate("PasswordGenerator", "Use a wordlist as suffix"))
         self.StoreComboLabel.setText(_translate("PasswordGenerator", "Store Combinations"))
         self.UseDefTxtFileLabel.setText(_translate("PasswordGenerator", "Use the default text file"))
         self.UseCustomTxtFileLabel.setText(_translate("PasswordGenerator", "Use a custom text file "))

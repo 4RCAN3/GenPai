@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>562</width>
-    <height>451</height>
+    <width>560</width>
+    <height>445</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -21,7 +21,7 @@
     <item>
      <widget class="QScrollArea" name="scrollArea">
       <property name="styleSheet">
-       <string notr="true">background: qlineargradient(spread:pad, x1:0.113, y1:0.119455, x2:0.971591, y2:0.972, stop:0.0227273 rgba(0, 0, 0, 255), stop:1 rgba(255, 0, 0, 255))</string>
+       <string notr="true">background: qlineargradient(spread:pad, x1:0.006, y1:0, x2:0.745, y2:0, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(0, 0, 127, 255))</string>
       </property>
       <property name="widgetResizable">
        <bool>true</bool>
@@ -1037,7 +1037,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>562</width>
+     <width>560</width>
      <height>21</height>
     </rect>
    </property>

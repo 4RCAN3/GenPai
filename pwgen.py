@@ -19,8 +19,8 @@ class Settings():
     WritePass - Func to write all the combinations to a text file
     '''
 
-    def __init__(self):
-        pass
+    def __init__(self, text_file):
+        self.file = text_file
     
 
     '''
@@ -28,7 +28,7 @@ class Settings():
     Takes a string as an argument and returns a list of possible combination with leet substitution
     '''
 
-    def LeetCombo(self, password, bool):
+    def LeetCombo(self, password, bool, final_combos):
 
         if bool == 2:
 
@@ -51,17 +51,21 @@ class Settings():
 
             #getPlaces = lambda word: [leet[el.lower()] for el in word]
             
-            all_combs = []
             words = password.split(" ")
             for count, word in enumerate(words):
                 for letters in product(*getPlaces(leet, word)):
                     words[count] = "".join(letters)
-                    all_combs.append(" ".join(i for i in words))
-            
-            return all_combs
+                    if len(final_combos) < 10**7:
+                        final_combos.append(" ".join(i for i in words))
+                    else:
+                        self.WritePass(final_combos)
+                        final_combos = []
+                        final_combos.append(" ".join(i for i in words))
+    
+            return final_combos
         
         else:
-            return []
+            return final_combos
 
 
 
@@ -73,18 +77,23 @@ class Settings():
     '''
 
 
-    def WordCombos(self, min, max, chr_set, bool):
+    def WordCombos(self, min, max, chr_set, bool, final_combos):
         if bool == 2:
-            combos = []
+            final_combos
             chrs = chr_set
             min_length, max_length = min, max    
             for n in range(min_length, max_length+1):
                 for xs in product(chrs, repeat=n):
-                    combos.append(''.join(xs))
+                    if len(final_combos) < 10**7:
+                        final_combos.append(''.join(xs))
+                    else:
+                        self.WritePass(final_combos)
+                        final_combos = []
+                        final_combos.append(''.join(xs))
             
-            return combos
+            return final_combos
         else:
-            return []
+            return final_combos
 
     '''
     A function to add prefixes to the combinations
@@ -97,24 +106,32 @@ class Settings():
     def AddPrefix(self, prefix, combos, to_comb, bool):
 
         if bool == 2:
-
-            after_prefix_combo = []
-
-            if to_comb == 2:
-                prefixes = self.LeetCombo(prefix, 2)
-            else:
-                prefixes = [prefix]
             
+            if to_comb == 2:
+                prefixes = self.LeetCombo(prefix[0], 2, [])
+            else:
+                prefixes = prefix
+            
+            after = []
+
             for combo in combos:
                 for pre_combo in prefixes:
-                    word = pre_combo + combo
-                    after_prefix_combo.append(word)
+                    if (len(combos) + len(after) < 10**7):
+                        word = pre_combo + combo
+                        after.append(word)
+                    else:
+                        combos.extend(after)
+                        self.WritePass(combos)
+                        combos = []
+                        after = []
+                        after.append(word)
 
+            combos.extend(after)
             
-            return after_prefix_combo
+            return combos
         
         else:
-            return []
+            return combos
 
 
     
@@ -130,23 +147,32 @@ class Settings():
 
         if bool == 2:
 
-            after_suffix_combo = []
 
             if to_comb == 2:
-                suffixes = self.LeetCombo(suffix)
+                suffixes = self.LeetCombo(suffix[0], 2, [])
             else:
-                suffixes = [suffix]
+                suffixes = suffix
+            
+            after = []
             
             for combo in combos:
                 for suf_combo in suffixes:
-                    word = combo + suf_combo
-                    after_suffix_combo.append(word)
+                    if (len(combos) + len(after) < 10**7):
+                        word = combo + suf_combo
+                        after.append(word)
+                    else:
+                        combos.extend(after)
+                        self.WritePass(combos)
+                        combos = []
+                        after = []
+                        after.append(word)
 
+            combos.extend(after)
             
-            return after_suffix_combo
+            return combos
         
         else:
-            return []
+            return combos
 
     
     '''
@@ -161,19 +187,30 @@ class Settings():
     def AddNumPrefix(self, NumMinLength, NumMaxLength, combos, bool):
 
         if bool == 2:
-            after_prefix_combo = []
 
-            number_combos = self.WordCombos(NumMinLength, NumMaxLength, '0123456789', 2)
+            number_combos = self.WordCombos(NumMinLength, NumMaxLength, '0123456789', 2, [])
+
+
+            after = []
 
             for combo in combos:
                 for pre_combo in number_combos:
-                    word = str(pre_combo) + combo
-                    after_prefix_combo.append(word)
+                    if (len(combos) + len(after) < 10**7):
+                        word = str(pre_combo) + combo
+                        after.append(word)
+                    else:
+                        combos.extend(word)
+                        self.WritePass(combos)
+                        combos = []
+                        after = []
+                        after.append(word)
 
-            return after_prefix_combo
+            combos.extend(after)
+
+            return combos
 
         else:
-            return []
+            return combos
 
     
     '''
@@ -188,19 +225,29 @@ class Settings():
     def AddNumSuffix(self, NumMinLength, NumMaxLength, combos, bool):
 
         if bool == 2:
-            after_suffix_combo = []
 
-            number_combos = self.WordCombos(NumMinLength, NumMaxLength, '0123456789', 2)
+            number_combos = self.WordCombos(NumMinLength, NumMaxLength, '0123456789', 2, [])
+            
+            after = []
 
             for combo in combos:
                 for suf_combo in number_combos:
-                    word = combo + str(suf_combo)
-                    after_suffix_combo.append(word)
+                    if (len(combos) + len(after) < 10**7):
+                        word = combo + str(suf_combo)
+                        after.append(word)
+                    else:
+                        combos.extend(after)
+                        self.WritePass(combos)
+                        combos = []
+                        after = []
+                        after.append(word)
+            
+            combos.extend(after)
 
-            return after_suffix_combo
+            return combos
             
         else:
-            return []
+            return combos
 
 
 
@@ -209,7 +256,7 @@ class Settings():
     '''
 
     def WritePass(self, combos):
-        with open("combs.txt", 'w') as data:
+        with open(f"{self.file}.txt", 'w') as data:
             for word in combos:
                 data.write(word + '\n')
             data.close()

@@ -21,7 +21,7 @@ class Ui_MainWindow(object):
         self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget)
         self.verticalLayout.setObjectName("verticalLayout")
         self.scrollArea = QtWidgets.QScrollArea(self.centralwidget)
-        self.scrollArea.setStyleSheet("background: qlineargradient(spread:pad, x1:0.113, y1:0.119455, x2:0.971591, y2:0.972, stop:0.0227273 rgba(0, 0, 0, 255), stop:1 rgba(255, 0, 0, 255))")
+        self.scrollArea.setStyleSheet("background: qlineargradient(spread:pad, x1:0.006, y1:0, x2:0.745, y2:0, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(0, 0, 127, 255))")
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName("scrollArea")
         self.scrollAreaWidgetContents = QtWidgets.QWidget()
