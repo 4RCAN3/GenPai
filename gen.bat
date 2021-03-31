@@ -1,3 +1,1 @@
-@echo off
-python -m venv gen
-gen\Scripts\activate.bat & pip install -r requirements.txt
+gen\Scripts\activate.bat && pip install -r requirements.txt || pip3 install -r requirements.txt
