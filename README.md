@@ -11,6 +11,9 @@
 <br>
 
 
+<p align="center"> <a href="https://ko-fi.com/N4N144R2L"><img src="https://ko-fi.com/img/githubbutton_sm.svg"/></a></p>
+
+
 ## What is GenPai
   - This tool is made for making generation of WordLists and password combinations fairly easy through a user-friendly GUI and diverse customization. 
   - GenPai offers a range of settings that can be applied to generate combinations based on certain information, or if you want to generate a WordList. 
@@ -71,7 +74,3 @@ Contributions are always welcome! Please create a PR to add Github Profile.
 ## :pencil: License
 
 This project is licensed under [MIT](https://opensource.org/licenses/MIT) license.
-
-## :man_astronaut: Sponsor
-
-[Buy me a coffee](https://ko-fi.com/arc4n3)
