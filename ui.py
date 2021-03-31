@@ -11,10 +11,12 @@ class controller:
 
     def after_click(self):
         
+        #Getting Generall settings values
         IncLeet = self.ui.IncludeLeetCheck.checkState()
         IncWL = self.ui.IncludeWLCheck.checkState()
         customWord = self.ui.CustomWordsText.toPlainText()
         
+        #Getting values for prefix  and suffix settings
         IncComboPS = self.ui.IncludeCombosCheck.checkState()
         prefixText = self.ui.AddPrefixText.toPlainText()
         suffixText = self.ui.AddSuffixText.toPlainText()
@@ -27,6 +29,7 @@ class controller:
         addWLPre = self.ui.IncludeWLpreCheck.checkState()
         addWLSuf = self.ui.IncludeWLSufCheck.checkState()
 
+        #Getting values for wordlist settings
         IncNumsInWL = self.ui.IncludeNumsCheck.checkState()
         UseDefaultCharList = self.ui.DefaultListCheck.checkState()
         customList = self.ui.CustomListText.toPlainText()
@@ -34,6 +37,7 @@ class controller:
         MinComboLen = self.ui.MinComboLenCheck.value()
         MaxComboLen = self.ui.MaxComboLenCheck.value()
 
+        #Getting values for storing settings
         useDefText = self.ui.UseDefTxtFileCheck.checkState()
         useCustomText = self.ui.UseCustomTxtFileCheck.toPlainText()
 
