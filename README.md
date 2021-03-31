@@ -33,7 +33,7 @@
 - Including Word List: Including this setting will create a Word List based on the settings provided for it.
 - Custom Word: Make combinations for a custom word, for example make leet combinations for the custom word, add combinations of prefixes to the custom word, etc. 
 
-### Prefix and Suffix Settings
+#### Prefix and Suffix Settings
 
 - Add prefix: Add a prefix to all the combinations being generated. This will not override the previous combinations but will create the same amount of combinations with a prefix. 
 - Add suffix: Add a suffix to all the combinations being generated. This will not override the previous combinations but will create the same amount of combinations with a suffix. 
@@ -47,7 +47,7 @@
 - Use a wordlist as prefix: Generates a wordlist based on the WordList settings and adds them as prefixes. 
 - Use a wordlist as suffix: Generates a wordlist based on the WordList settings and adds them as suffixes. 
 
-### Settings for WordList
+#### Settings for WordList
 
 - Include Numbers: This will include combinations of numbers in the defualt character list that is used to generate the wordlist (The default character list is a-z)
 - Use default Character list: This will include the default character list to generate the wordlist (a-z)
@@ -56,7 +56,7 @@
 - Custom Character List: Use this to override the default alphabet list and use a custom character list to generate the word list. 
 - Extend the default list: Use this to extend the default alphabet list (a-z). This will add the charcaters to the default character list. 
 
-### Store Combinations
+#### Store Combinations
 
 - Use the default Text file: Choosing this options will store the combinations to the default text file (combs.txt)
 - Use a custom text file: Adding a file name (without extension) to this will create a new text file with that name and store the combinations in that file
