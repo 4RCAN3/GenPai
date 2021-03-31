@@ -79,7 +79,6 @@ class Settings():
 
     def WordCombos(self, min, max, chr_set, bool, final_combos):
         if bool == 2:
-            final_combos
             chrs = chr_set
             min_length, max_length = min, max    
             for n in range(min_length, max_length+1):
@@ -260,4 +259,3 @@ class Settings():
             for word in combos:
                 data.write(word + '\n')
             data.close()
-

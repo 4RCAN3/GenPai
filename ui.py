@@ -50,30 +50,31 @@ class controller:
 
         if IncNumsInWL == 2:
             chrs += '1234567890'
-        elif customList != 0:
+        elif customList != '':
             chrs = customList
-        elif extendList != 0:
+        elif extendList != '':
             chrs += extendList
 
         final_combs = settings.LeetCombo(customWord, IncLeet, final_combs)
         final_combs = settings.WordCombos(MinComboLen, MaxComboLen, chrs, IncWL, final_combs)
         
         if prefixText != '':
-            if addWLPre == 2:
-                prefix = settings.WordCombos(MinComboLen, MaxComboLen, chrs, 2, [])
-                IncComboPS = 0
-            else:
-                prefix = [prefixText]
-                
+            prefix = [prefixText]        
+            final_combs = settings.AddPrefix(prefix, final_combs, IncComboPS, 2)
+        
+        if addWLPre == 2:
+            prefix = settings.WordCombos(MinComboLen, MaxComboLen, chrs, 2, [])
+            print(prefix)
+            IncComboPS = 0
             final_combs = settings.AddPrefix(prefix, final_combs, IncComboPS, 2)
         
         if suffixText != '':
-            if addWLSuf == 2:
-                suffix = settings.WordCombos(MinComboLen, MaxComboLen, chrs, 2, [])
-                IncComboPS = 0
-            else:
-                suffix = [suffixText]
-
+            suffix = [suffixText]
+            final_combs = settings.AddSuffix(suffix, final_combs, IncComboPS, 2)
+        
+        if addWLSuf == 2:
+            suffix = settings.WordCombos(MinComboLen, MaxComboLen, chrs, 2, [])
+            IncComboPS = 0
             final_combs = settings.AddSuffix(suffix, final_combs, IncComboPS, 2)
 
         final_combs = settings.AddNumPrefix(prefixMinNumLen, prefixNumLen, final_combs, IncNumsPre)
