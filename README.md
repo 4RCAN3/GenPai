@@ -72,4 +72,6 @@ Contributions are always welcome! Please create a PR to add Github Profile.
 
 This project is licensed under [MIT](https://opensource.org/licenses/MIT) license.
 
-## :man_astronaut: Show your support
+## :man_astronaut: Sponsor
+
+[Buy me a coffee](https://ko-fi.com/arc4n3)
