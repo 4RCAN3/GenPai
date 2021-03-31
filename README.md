@@ -19,6 +19,11 @@
   - GenPai offers a range of settings that can be applied to generate combinations based on certain information, or if you want to generate a WordList. 
   - GenPai stores all the combinations in a text file. You can create multiple text files to store the combinations by changing the settings. 
 
+<br>
+
+![image](https://user-images.githubusercontent.com/69053040/113216148-85f4da00-9299-11eb-870a-444303f1156c.png)
+
+<br>
 
 ## Available Settings 
 
