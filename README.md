@@ -73,8 +73,11 @@
 <img src = "https://img.shields.io/badge/python%20-%236C0101.svg?style=for-the-badge&logo=python&logoColor=white" alt="python"/>
 
 # Contribute
+Any contributions you make are **greatly appreciated**.
 
-Contributions are always welcome! Please create a PR to add Github Profile.
+- PRs are accepted!!
+- If you have some ideas for new features and you don't have time to implement them please open an issue with the tag new_feature.
+- Please don't forget to comment (document) your code!
 
 ## :pencil: License
 
